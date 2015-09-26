@@ -8,13 +8,20 @@ body{
 nav {
     top:0; left:0; right:0;
     width: 100%;
-    padding-top:2.4em;
+    padding-top:2em;
     position:fixed;
     background-color:;
     height:auto;
     -webkit-transform: translate3d(0, 0, 0);
     overflow:hidden;
     background-color: white;
+}
+nav img {
+    margin-left: auto;
+    margin-right:auto;
+    display:block;
+    height:30%;
+    width:30%;
 }
 h1{
     text-align:center;
@@ -30,7 +37,7 @@ ul {
     font-size:.9em;
 }
 #content {
-    margin-top:10em;
+    margin-top:12em;
     margin-left: auto;
     margin-right: auto;
     height:auto;
