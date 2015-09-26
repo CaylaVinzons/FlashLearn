@@ -1,3 +1,5 @@
 $(document).ready(function() {
-    $('#slide1 p').fadeIn(4000);
+   $( "#text:hidden:first" ).fadeIn( 3000 );
+   $( "#slide1 img:hidden:first").fadeIn(6000);
+   $("#slide1 img:hidden:first").slideLeft();
 });
