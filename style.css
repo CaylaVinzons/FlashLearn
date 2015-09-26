@@ -185,3 +185,24 @@ button a:visited {
     padding-bottom:4em;
     text-align:center;
 }
+
+/*CardViewer*/
+#cardviewer {
+    text-align:center;
+}
+#cardviewer div {
+    display:inline-block;
+    width: 40vw;
+    height:40vh;
+    border:solid 1px;
+}
+#cardviewer p {
+    padding:3em;
+}
+#cardviewer img{
+    /*margin-top:50%;
+    margin-bottom: 50%;*/
+    display:inline-block;
+    height:10vw%;
+    width:10vw;
+}
