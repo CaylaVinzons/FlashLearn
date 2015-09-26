@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'^flashlearn/$', views.flashlearn, name='flashlearn'),
     url(r'^card/(?P<card_id>[0-9]+)/$', views.view_card, name='view_card'),
     url(r'^card/(?P<card_id>[0-9]+)/edit/$', views.edit_card, name='edit_card'),
     url(r'^document/(?P<document_id>[0-9]+)/$', views.view_document, name='view_document'),
