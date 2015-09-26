@@ -1,0 +1,18 @@
+<h1>Third party authentication</h1>
+<p>
+{% if user and not user.is_anonymous %}
+Hello {{ user.get_full_name|default:user.username}}!
+{{ user.pk }}
+<a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
+{% else %}
+I don't think you are logged in
+<a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</a>
+{% endif %}
+</p>
+<h1>UPLOAD YOUR PICS</h1>
+<form enctype="multipart/form-data" action="{% url 'flashcards:upload_scan' %} " method="post">
+  {% csrf_token %}
+  Image Upload:
+  {{form.scan_data}}
+  <input type="submit" value="Submit" />
+</form>

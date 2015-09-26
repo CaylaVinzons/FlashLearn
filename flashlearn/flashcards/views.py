@@ -8,8 +8,14 @@ from .forms import *
 from django.http import HttpResponse
 
 def index(request):
+    if request.user and not request.user.is_anonymous:
+        return redirect("flashcards:flashlearn")
+    else:
+        return render(request, "flashcards/index.html")
+
+def flashlearn(request):
     form = ScanUploadForm()
-    return render(request, "flashcards/index.html", {'form': form, 'request': request, 'user': request.user})
+    return render(request, "flashcards/flashlearn.html", {'form': form, 'request': request, 'user': request.user})
 
 def view_card(request, card_id):
     try:
