@@ -71,7 +71,9 @@ ul a:visited {
     padding:1em;
 }
 #slide2 {
-    background-color:#FFFFFF;
+    /*background-color:#FFFFFF;*/
+    background-image: url("http://www.morphballs.com/wp-content/uploads/2015/04/nature-download-texture-gray-wrinkled-paper-leaf-paper-download-textured-paper-background-1024x768.jpg");
+    background-size: cover;
     margin-top:-10px;
     padding-bottom:20em;
     height:auto;
@@ -116,8 +118,8 @@ button {
     -moz-border-radius: 100px;
     -webkit-border-radius: 100px;
     border-radius:100px;
-    height: 4em;
-    width: 12em;
+    height: 5em;
+    width: 20em;
     display:inline-block;
     cursor: pointer;
 }
@@ -141,3 +143,4 @@ button a:visited {
     padding-bottom:4em;
     text-align:center;
 }
+
