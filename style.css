@@ -16,11 +16,7 @@ nav {
     -webkit-transform: translate3d(0, 0, 0);
     overflow:hidden;
     background-color: white;
-<<<<<<< HEAD
     z-index:100;
-=======
-    z-index: 100;
->>>>>>> cdb7f40d513cb57c1601e95da19b6353ac69b0d3
 }
 nav img {
     margin-left: auto;
