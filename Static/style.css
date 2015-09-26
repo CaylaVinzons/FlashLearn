@@ -29,9 +29,8 @@ nav a{
     cursor:default;
     color: #363636;
 }
-nav a:hover{
+nav ul li a:hover{
     color: #FDE74C;
-    font-weight: bold;
 }
 h1{
     text-align:center;
