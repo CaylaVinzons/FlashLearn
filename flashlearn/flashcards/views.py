@@ -35,6 +35,6 @@ def upload_scan(request):
         form = ScanUploadForm(request.POST, request.FILES)
         if form.is_valid():
             new_scan = form.save(commit=False)
-            new_scan.scan_data = request.FILES['scan']
+            new_scan.scan_data = request.FILES['scan_data']
             new_scan.save()
         return render(request, "flashcards/library.html")
