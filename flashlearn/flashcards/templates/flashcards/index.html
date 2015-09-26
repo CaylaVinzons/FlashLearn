@@ -3,7 +3,10 @@
 {% if user and not user.is_anonymous %}
 Hello {{ user.get_full_name|default:user.username}}!
 {% else %}
-I don't think you are logged
+I don't think you are logged in
+<li>
+  <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</a>
+</li>
 {% endif %}
 </p>
 <h1>UPLOAD YOUR PICS</h1>
