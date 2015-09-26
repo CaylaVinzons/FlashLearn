@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 class Card(models.Model):
     front_data = models.TextField()
@@ -11,3 +12,6 @@ class Document(models.Model):
     document_data = models.TextField()
     def __str__(self):
         return self.document_name
+
+class Scan(models.Model):
+    scan_data = models.ImageField(upload_to=settings.MEDIA_ROOT + "/scans/")

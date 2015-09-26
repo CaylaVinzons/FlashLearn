@@ -2,11 +2,13 @@ from django.http import Http404
 from django.shortcuts import render
 
 from .models import *
+from .forms import *
 
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("You are at the flashcards page.")
+    form = ScanUploadForm()
+    return render(request, "flashcards/index.html", {'form': form})
 
 def view_card(request, card_id):
     try:
@@ -27,3 +29,12 @@ def edit_card(request, card_id):
 
 def edit_document(request, document_id):
     return HttpResponse("You are editing document %s." % card_id)
+
+def upload_scan(request):
+    if request.method == 'POST':
+        form = ScanUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            new_scan = form.save(commit=False)
+            new_scan.scan_data = request.FILES['scan']
+            new_scan.save()
+        return render(request, "flashcards/library.html")
