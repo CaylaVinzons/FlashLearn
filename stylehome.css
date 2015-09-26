@@ -1,41 +1,4 @@
-*{
-    margin:0px;
-    padding:0px;
-}
-body{
-    font-family: 'Open Sans', sans-serif;
-}
-nav {
-    top:0; left:0; right:0;
-    width: 100%;
-    padding-top:1.2em;
-    padding-bottom:1.2em;
-    position:fixed;
-    background-color:;
-    height:auto;
-    -webkit-transform: translate3d(0, 0, 0);
-    overflow:hidden;
-    background-color: white;
-    z-index:100;
-}
-nav img {
-    margin-left: auto;
-    margin-right:auto;
-    display:block;
-    height:35%;
-    width:35%;
-}
-nav a{
-    cursor:default;
-    color: #363636;
-}
-nav a:hover{
-    color: #FDE74C;
-}
-h1{
-    text-align:center;
-    font-size:2em;
-}
+
 #first {
     margin-right:2.5em;
 }
