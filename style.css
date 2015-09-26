@@ -16,6 +16,7 @@ nav {
     -webkit-transform: translate3d(0, 0, 0);
     overflow:hidden;
     background-color: white;
+    z-index: 100;
 }
 nav img {
     margin-left: auto;
