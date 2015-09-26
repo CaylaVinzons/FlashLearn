@@ -15,3 +15,6 @@ class Document(models.Model):
 
 class Scan(models.Model):
     scan_data = models.ImageField(upload_to="scans/")
+
+class UserDocument(models.Model):
+    document = models.ForeignKey(Document)
