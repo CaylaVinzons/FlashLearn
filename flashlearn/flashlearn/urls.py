@@ -17,6 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^flashcards/', include('flashcards.urls', namespace="flashcards")),
+    #url(r'^flashcards/', include('flashcards.urls', namespace="flashcards")),
+    url(r'^', include('flashcards.urls', namespace="flashcards")),
     url(r'^admin/', include(admin.site.urls)),
 ]
