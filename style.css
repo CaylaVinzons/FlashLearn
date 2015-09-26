@@ -16,6 +16,7 @@ nav {
     -webkit-transform: translate3d(0, 0, 0);
     overflow:hidden;
     background-color: white;
+    z-index:100;
 }
 nav img {
     margin-left: auto;
@@ -183,4 +184,23 @@ button a:visited {
     margin-top: -10px;
     padding-bottom:4em;
     text-align:center;
+}
+
+/*CardViewer*/
+#cardviewer {
+    text-align:center;
+}
+#cardviewer div {
+    display:inline-block;
+    width: 50%;
+    height:80%;
+    border:solid 1px;
+}
+#cardviewer p {
+    padding:3em;
+}
+#cardviewer img{
+    display:inline-block;
+    height:12%;
+    width:12%;
 }
