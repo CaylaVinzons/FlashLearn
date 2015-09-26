@@ -21,4 +21,5 @@ urlpatterns = [
     #url(r'^flashcards/', include('flashcards.urls', namespace="flashcards")),
     url(r'^', include('flashcards.urls', namespace="flashcards")),
     url(r'^admin/', include(admin.site.urls)),
+    url('', include('social.apps.django_app.urls', namespace='social')),
 ]
