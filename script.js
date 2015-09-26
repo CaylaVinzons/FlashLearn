@@ -6,5 +6,4 @@ $(document).ready(function() {
   $("#circle2").hide()
   $("#circle2").fadeIn(5000, 'swing');
 
-
 });
