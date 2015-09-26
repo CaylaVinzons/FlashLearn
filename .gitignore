@@ -64,3 +64,6 @@ flashlearn/.DS_Store
 flashlearn/flashlearn/.DS_Store
 
 *.pyc
+
+venv
+staticfiles
