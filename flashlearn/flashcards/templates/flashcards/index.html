@@ -1,5 +1,7 @@
 <h1>UPLOAD YOUR PICS</h1>
-<form enctype="multipart/form-data" action="{% url 'flashcards:upload_scan }' " method="post">
+<form enctype="multipart/form-data" action="{% url 'flashcards:upload_scan' %} " method="post">
+  {% csrf_token %}
   Image Upload:
   {{form.scan_data}}
+  <input type="submit" value="Submit" />
 </form>

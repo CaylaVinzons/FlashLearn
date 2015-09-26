@@ -14,4 +14,4 @@ class Document(models.Model):
         return self.document_name
 
 class Scan(models.Model):
-    scan_data = models.ImageField(upload_to=settings.MEDIA_ROOT + "/scans/")
+    scan_data = models.ImageField(upload_to="scans/")

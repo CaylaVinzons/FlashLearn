@@ -72,13 +72,23 @@ ul a:visited {
 .circle {
     margin-top:3em;
     margin:9vw;
-    /*height:6em;*/
+    height:6em;
     width:10vw;
     height:10vw;
     border-radius:200px;
     background-color: black;
     display:inline-block;
 }
+
+#textbook {
+  height: 60%;
+  width: 60%;
+}
+#notecard {
+  height: 60%;
+  width: 60%;
+}
+
 .clearfix:after {
    content: " ";
    display: block;

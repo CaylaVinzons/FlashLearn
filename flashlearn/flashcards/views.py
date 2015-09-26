@@ -1,5 +1,6 @@
 from django.http import Http404
 from django.shortcuts import render
+from django.shortcuts import redirect
 
 from .models import *
 from .forms import *
@@ -30,11 +31,15 @@ def edit_card(request, card_id):
 def edit_document(request, document_id):
     return HttpResponse("You are editing document %s." % card_id)
 
+def view_library(request, id=None):
+    #return render(request, "flashcards/library.html", {'userlibrary': userlibrary})
+    return render(request, "flashcards/library.html",{})
+
 def upload_scan(request):
     if request.method == 'POST':
         form = ScanUploadForm(request.POST, request.FILES)
         if form.is_valid():
             new_scan = form.save(commit=False)
-            new_scan.scan_data = request.FILES['scan']
+            new_scan.scan_data = request.FILES['scan_data']
             new_scan.save()
-        return render(request, "flashcards/library.html")
+        return redirect("flashcards:view_library")
