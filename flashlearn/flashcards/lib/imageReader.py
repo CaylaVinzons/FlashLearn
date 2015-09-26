@@ -3,9 +3,9 @@ try:
 except ImportError:
     from PIL import Image
 import os
-import pytesseract
+from pytesseract import *
 
 print(os.listdir())
-i=Image.open("tesseract.png")
-print(pytesseract.image_to_string(i))
+i = Image.open("/Users/zhangj/Desktop/FlashLearn/flashlearn/flashcards/lib/tesseract.png")
+print(image_to_string(i))
 #print(pytesseract.image_to_string(Image.open('tesseract.png')))
