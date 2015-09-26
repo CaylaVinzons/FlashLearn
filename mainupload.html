@@ -2,7 +2,18 @@
 <html>
     <head>
         <title>FlashLearn</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="script.js"></script>
     </head>
     <body>
+        <div class="content">
+            Upload your image here
+            <form class="uploadimage" method = "post" enctype="multipart/form-data">
+                <input type="file" name="img" accept="image/gif, image/jpeg, image/png">
+                <input type="submit" name="upload" value="Upload" id="submitbutton">
+            </form>
+        </div>
     </body>
 </html>
