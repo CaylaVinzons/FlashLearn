@@ -27,6 +27,10 @@ nav img {
 }
 nav a{
     cursor:default;
+    color: #363636;
+}
+nav a:hover{
+    color: #FDE74C;
 }
 h1{
     text-align:center;
