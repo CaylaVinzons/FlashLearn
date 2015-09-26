@@ -17,6 +17,9 @@ def flashlearn(request):
     form = ScanUploadForm()
     return render(request, "flashcards/flashlearn.html", {'form': form, 'request': request, 'user': request.user})
 
+def login(request):
+    return render(request, "flashcards/login.html")
+
 def view_card(request, card_id):
     try:
         card = Card.objects.get(pk=card_id)
