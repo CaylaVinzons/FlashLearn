@@ -1,3 +1,11 @@
+<h1>Third party authentication</h1>
+<p>
+{% if user and not user.is_anonymous %}
+Hello {{ user.get_full_name|default:user.username}}!
+{% else %}
+I don't think you are logged
+{% endif %}
+</p>
 <h1>UPLOAD YOUR PICS</h1>
 <form enctype="multipart/form-data" action="{% url 'flashcards:upload_scan' %} " method="post">
   {% csrf_token %}
