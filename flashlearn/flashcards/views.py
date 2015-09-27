@@ -23,13 +23,6 @@ def flashlearn(request):
 def login(request):
     return render(request, "flashcards/login.html")
 
-def view_card(request, card_id):
-    try:
-        card = Card.objects.get(pk=card_id)
-    except Card.DoesNotExist:
-        raise Http404("Card doesn't exist")
-    return render(request, "flashcards/card.html", {'card': card})
-
 def view_document(request, document_id):
     try:
         document = Document.objects.get(pk=document_id)
@@ -38,7 +31,19 @@ def view_document(request, document_id):
     return render(request, "flashcards/document.html", {'document': document})
 
 def edit_card(request, card_id):
-    return HttpResponse("You are editing card %s." % card_id)
+    if request.method == 'POST':
+        form = CardEditForm(request.POST)
+        if form.is_valid():
+            try:
+                card = Card.objects.get(pk=card_id)
+            except Card.DoesNotExist:
+                raise Http404("Card doesn't exist")
+            c_front = request.POST['front_data']
+            c_back = request.POST['back_data']
+            edited_card = Card.objects.create(front_data=c_front, back_data=back_data)
+            card = edited_card
+            card.save()
+            return redirect("flashcards:view_document", document_id=document_id)
 
 def edit_document(request, document_id):
     if request.method == 'POST':
