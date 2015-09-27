@@ -2,15 +2,15 @@
 <html>
     <head>
         <title>FlashLearn</title>
-        <link rel="stylesheet" type="text/css" href="static/style.css"/>
-        <link rel="stylesheet" type="text/css" href="static/stylehome.css"/>
+        <link rel="stylesheet" type="text/css" href="/static/style.css"/>
+        <link rel="stylesheet" type="text/css" href="/static/stylehome.css"/>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="static/script.js"></script>
+        <script src="/static/script.js"></script>
     </head>
     <body>
         <nav>
-          <a href="{% url 'flashcards:index' %}"><img src="static/FlashLearnLogo.png"/></a>
+          <a href="{% url 'flashcards:index' %}"><img src="/static/FlashLearnLogo.png"/></a>
             <ul>
                 {% if user and not user.is_anonymous %}
                 <li>Hello {{ user.get_full_name|default:user.username}}!</li>
@@ -25,9 +25,9 @@
             <div id="slide1" class="slide">
                 <p id="text">Turn your textbooks into flashcards</p>
                 <div class="clearfix">
-                    <img id="circle1" src="static/CircleTextbook.png" height="25%" width="25%"/>
-                    <img id="arrow" src="static/arrow.png" height="15%" width="15%"/>
-                    <img id="circle2" src="static/CircleNote.png" height="25%" width="25%"/>
+                    <img id="circle1" src="/static/CircleTextbook.png" height="25%" width="25%"/>
+                    <img id="arrow" src="/static/arrow.png" height="15%" width="15%"/>
+                    <img id="circle2" src="/static/CircleNote.png" height="25%" width="25%"/>
                 </div>
             </div>
             <div id="slide2" class ="slide">
@@ -37,7 +37,7 @@
                     <a href="mainupload.html"><button id="button">Upload</button></a>
                 </div>
                 <div id="otherhalf">
-                <img src="static/textbook.png" height="300px" width="240px"/>
+                <img src="/static/textbook.png" height="300px" width="240px"/>
                 </div>
             </clearfix>
             </div>

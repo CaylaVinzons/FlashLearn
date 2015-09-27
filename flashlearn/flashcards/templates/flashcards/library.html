@@ -10,7 +10,7 @@
 </head>
   <body>
       <nav>
-          <a href="{% url 'flashcards:index' %}"><img src="static/FlashLearnLogo.png"/></a>
+          <a href="{% url 'flashcards:index' %}"><img src="/static/FlashLearnLogo.png"/></a>
           <ul>
               <li id="first">register</li>
               <li><a href="login.html">log in</a></li>
@@ -20,7 +20,7 @@
       </nav>
       <div class="content">
           <div id="libraryhead">Library</div>
-          {% for userdoc in userlibrary %}}
+          {% for userdoc in userlibrary %}
           <div id="doc">
               <a href="cardviewer.html">{{userdoc.document.document_name}}</a>
           </div>
