@@ -137,3 +137,7 @@ button a:visited {
     text-align: right;
     font-size:1.2em;
 }
+#footer span {
+    text-align:left;
+    font-size:0.9em;
+}
