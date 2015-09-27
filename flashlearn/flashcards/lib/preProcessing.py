@@ -53,7 +53,7 @@ def loadPhoto(filepath):
     photo = cv2.imread(filepath, 1) #1 means read in color
 
     height, width = photo.shape[:2] #getting the dimensions of the image
-    print(height, width)
+
     for i in range(width-1):
         for j in range(height-1):
             blue = photo.item(j, i, 0) #blue value at this point
@@ -85,4 +85,3 @@ def aggregate(filepath):
 
     blank_image = cv2.cvtColor(blank_image, cv2.COLOR_BGR2GRAY)
     cv2.imwrite('edited.png', blank_image) #saves to working directory
-
