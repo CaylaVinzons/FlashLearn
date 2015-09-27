@@ -17,6 +17,7 @@
 }
 .slide p {
     font-size:1.3em;
+    padding-top:2em;
 }
 .circle {
     margin-top:3em;
@@ -100,8 +101,8 @@
     width: 16em;
     display:inline-block;
     cursor: pointer;
-    font-size: 12px;
-    font-color: #363636;
+    color: #363636;
+    font-size:12px;
     font-weight:bold;
 }
 .button: hover, focus {    background-color:#CCB50E;
