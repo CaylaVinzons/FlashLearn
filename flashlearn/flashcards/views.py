@@ -7,8 +7,11 @@ from .forms import *
 
 from django.http import HttpResponse
 
+def loggedin(request):
+    return request.user and (not request.user.is_anonymous or request.user.pk is not None)
+
 def index(request):
-    if request.user and not request.user.is_anonymous:
+    if loggedin(request):
         return redirect("flashcards:flashlearn")
     else:
         return render(request, "flashcards/index.html")
@@ -40,8 +43,8 @@ def edit_card(request, card_id):
 def edit_document(request, document_id):
     return HttpResponse("You are editing document %s." % card_id)
 
-def view_library(request, id=None):
-    if request.user:
+def view_library(request):
+    if loggedin(request):
         user_docs = UserDocument.objects.all().filter(user_id=request.user.pk)
         return render(request, "flashcards/library.html", {'userlibrary': user_docs})
     else:

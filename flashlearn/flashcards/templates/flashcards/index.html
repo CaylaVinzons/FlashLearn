@@ -18,7 +18,8 @@
                 {% else %}
                 <li><a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</a></li>
                 {% endif %}
-                <li id="first"><a href="{% url 'flashcards:flashlearn' %}">upload</a></li>
+                <li><a href="{% url 'flashcards:view_library' %}">documents</a></li>
+                <li><a href="{% url 'flashcards:flashlearn' %}">upload</a></li>
             </ul>
         </nav>
         <div class = "content">
