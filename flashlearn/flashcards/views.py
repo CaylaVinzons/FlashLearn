@@ -41,7 +41,19 @@ def edit_card(request, card_id):
     return HttpResponse("You are editing card %s." % card_id)
 
 def edit_document(request, document_id):
-    return HttpResponse("You are editing document %s." % card_id)
+    if request.method == 'POST':
+        form = DocumentEditForm(request.POST)
+        if form.is_valid():
+            try:
+                document = Document.objects.get(pk=document_id)
+            except Document.DoesNotExist:
+                raise Http404("Document doesn't exist")
+            d_name = request.POST['document_name']
+            d_data = request.POST['document_data']
+            edited_document = Document.objects.create(document_name=d_name, document_data=d_data)
+            document = edited_document
+            document.save()
+            return redirect("flashcards:view_document", document_id=document_id)
 
 def view_library(request):
     if loggedin(request):
