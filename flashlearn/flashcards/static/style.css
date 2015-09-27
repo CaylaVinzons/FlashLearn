@@ -29,9 +29,8 @@ nav a{
     cursor:default;
     color: #363636;
 }
-nav a:hover{
+nav ul li a:hover{
     color: #FDE74C;
-    font-weight: bold;
 }
 h1{
     text-align:center;
@@ -105,9 +104,49 @@ ul a:visited {
     padding:3em;
 }
 #cardviewer img{
-    /*margin-top:50%;
-    margin-bottom: 50%;*/
     display:inline-block;
     height:10vw%;
     width:10vw;
+}
+/*DocViewer*/
+#libraryhead {
+    margin-left: auto;
+    margin-right: auto;
+    width:80%;
+    height:auto;
+    padding-top:.5em;
+    padding-bottom: .5em;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color:#FDE74C;
+    color:#363636;
+    text-align: center;
+    font-size:1.4em;
+}
+#doc {
+    text-align:center;
+    margin-left:auto;
+    margin-right: auto;
+    width: 80%;
+    height:auto;
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+    font-size:0.8em;
+    background-color:#363636;
+    color:#FDE74C;
+}
+#doc:hover{
+    opacity:.4;
+    transition: 1s;
+}
+#doc a {
+    text-decoration: none;
+    color:#FDE74C;
+    cursor: default;
+}
+#doc a: visisted {
+    color:#FDE74c;
+}
+#doc a: hover {
+    color:#363636;
 }
