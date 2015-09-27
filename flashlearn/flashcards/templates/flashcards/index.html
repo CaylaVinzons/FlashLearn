@@ -14,36 +14,38 @@
             <ul>
                 {% if user and not user.is_anonymous %}
                 <li>Hello {{ user.get_full_name|default:user.username}}!</li>
-                <li><a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a></li>
                 {% else %}
-                <li><a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</a></li>
                 {% endif %}
-                <li><a href="{% url 'flashcards:view_library' %}">documents</a></li>
                 <li><a href="{% url 'flashcards:flashlearn' %}">upload</a></li>
             </ul>
         </nav>
         <div class = "content">
             <div id="slide1" class="slide">
-                <p id="text">Turn your textbooks into flashcards</p>
                 <div class="clearfix">
-                    <img id="circle1" src="/static/CircleTextbook.png" height="25%" width="25%"/>
-                    <img id="arrow" src="/static/arrow.png" height="15%" width="15%"/>
-                    <img id="circle2" src="/static/CircleNote.png" height="25%" width="25%"/>
+                    <img id="circle1" src="static/CircleTextbook.png" height="25%" width="25%"/>
+                    <img id="arrow" src="static/arrow.png" height="15%" width="15%"/>
+                    <img id="circle2" src="static/CircleNote.png" height="25%" width="25%"/>
                 </div>
             </div>
             <div id="slide2" class ="slide">
-                <p>Upload .png, .jpg, and .gif files </p>
+                <p>Upload the textbook file as a .png, .jpg, or .gif. </p>
                 <clearfix>
                 <div id="half">
-                    <a href="mainupload.html"><button id="button">Upload</button></a>
+                <!-- <img src="static/textbook.png" height="360" width="288"/> -->
+                <img src="static/tripletexts.png" height="370px" width="350px"/>
                 </div>
                 <div id="otherhalf">
-                <img src="/static/textbook.png" height="300px" width="240px"/>
+                <a href="mainupload.html"><button class="button"><font size="6">UPLOAD</font></button></a>
                 </div>
             </clearfix>
             </div>
             <div id="slide3" class="slide">
-                <p>Pytesseract and Opencv will extract your <b>bold</b> words and save their definitions</p>
+                <p>Pytesseract and Opencv <i>extract</i> your <b>bolded</b> words<br> and
+                   <i>save</i> the definitions as flashcards.</p>
+            </div>
+        </div>
+        <div id="footer">
+            HackGT 2015
         </div>
     </body>
 </html>
