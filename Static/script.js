@@ -8,8 +8,8 @@ $(document).ready(function() {
     });
 });
 
-$(".card").click(function() {
-    $("#card").flip();
+$("#card1").click(function() {
+    $("#card1").flip('toggle');
 });
 function second() {
   $("#arrow").css({opacity: 0});
