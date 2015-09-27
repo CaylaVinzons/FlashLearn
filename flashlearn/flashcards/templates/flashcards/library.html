@@ -1,1 +1,9 @@
 welcome to the library
+{% csrf_token %}
+<ul>
+{% for userdoc in userlibrary %}
+<li>
+{{ userdoc.document.document_name }}:{{ userdoc.document.document_data }}
+</li>
+{% endfor %}
+</ul>

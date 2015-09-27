@@ -41,8 +41,12 @@ def edit_document(request, document_id):
     return HttpResponse("You are editing document %s." % card_id)
 
 def view_library(request, id=None):
-    #return render(request, "flashcards/library.html", {'userlibrary': userlibrary})
-    return render(request, "flashcards/library.html",{})
+    #if request.user and not request.user.is_anonymous:
+        user_docs = UserDocument.objects.all().filter(user_id=request.user.pk)
+        return render(request, "flashcards/library.html", {'userlibrary': user_docs})
+    #else:
+    #    return redirect("flashcards:index")
+    #return render(request, "flashcards/library.html",{})
 
 def upload_scan(request):
     if request.method == 'POST':
