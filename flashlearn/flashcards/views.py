@@ -31,6 +31,19 @@ def view_document(request, document_id):
     document_cards = DocumentCard.objects.all().filter(document=document)
     return render(request, "flashcards/document.html", {'document': document, 'card_deck': document_cards})
 
+def add_card(request):
+    if request.method == 'POST':
+        form = CardEditForm(request.POST)
+        if form.is_valid():
+            c_document = request.POST['card_document']
+            c_front = request.POST['front_data']
+            c_back = request.POST['back_data']
+            card = Card.objects.add(front_data=c_front, back_data=c_back)
+            card.save()
+            card_document = DocumentCard.objects.add(card=card, document=Document.objects.get(pk=c_document))
+            card_document.save()
+            return redirect("flashcards:view_document", document_id=card_document.document.pk)
+
 def edit_card(request, card_id):
     if request.method == 'POST':
         form = CardEditForm(request.POST)
