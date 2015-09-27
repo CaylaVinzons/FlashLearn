@@ -1,9 +1,33 @@
-welcome to the library
 {% csrf_token %}
-<ul>
-{% for userdoc in userlibrary %}
-<li>
-<a href="{% url 'flashcards:view_document' userdoc.document.pk %}">{{ userdoc.document.document_name }}:{{ userdoc.document.document_data }}</a>
-</li>
-{% endfor %}
-</ul>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FlashLearn</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="static/script.js"></script>
+</head>
+  <body>
+      <nav>
+          <a href="home.html"><img src="static/FlashLearnLogo.png"/></a>
+          <ul>
+              <li id="first">register</li>
+              <li><a href="login.html">log in</a></li>
+              <li><a href="mainupload.html">upload</a></li>
+              <li><a href="docviewer.html">documents</a></li>
+          </ul>
+      </nav>
+      <div class="content">
+          <div id="libraryhead">Library</div>
+          {% for userdoc in userlibrary %}}
+          <div id="doc">
+              <a href="cardviewer.html">{{userdoc.document.document_name}}</a>
+          </div>
+          {% endfor %}
+        <br>
+<!-- <button>Make Flashcards</button>
+        Button to convert to flashcards, which leads to <a href="cardviewer.html">View</a>. -->
+      </div>
+  </body>
+</html>
