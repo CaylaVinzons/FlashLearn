@@ -3,7 +3,7 @@ welcome to the library
 <ul>
 {% for userdoc in userlibrary %}
 <li>
-{{ userdoc.document.document_name }}:{{ userdoc.document.document_data }}
+<a href="{% url 'flashcards:view_document' userdoc.document.pk %}">{{ userdoc.document.document_name }}:{{ userdoc.document.document_data }}</a>
 </li>
 {% endfor %}
 </ul>

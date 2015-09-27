@@ -10,11 +10,15 @@
     </head>
     <body>
         <nav>
-          <a href="home.html"><img src="static/FlashLearnLogo.png"/></a>
+          <a href="{% url 'flashcards:index' %}"><img src="static/FlashLearnLogo.png"/></a>
             <ul>
-                <li id="first">register</li>
-                <li><a href="{% url 'flashcards:login' %}">log in</a></li>
-                <li><a href="{% url 'flashcards:flashlearn' %}">upload</a></li>
+                {% if user and not user.is_anonymous %}
+                <li>Hello {{ user.get_full_name|default:user.username}}!</li>
+                <li><a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</a></li>
+                {% endif %}
+                <li id="first"><a href="{% url 'flashcards:flashlearn' %}">upload</a></li>
             </ul>
         </nav>
         <div class = "content">
