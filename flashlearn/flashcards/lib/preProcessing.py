@@ -46,6 +46,8 @@ def getContours(filepath): #filepath should be string
             finalconts.append(contours[i])
 
     return finalconts
+    #photo = cv2.drawContours(photo, finalconts, -1,(255,0,0),3)
+    #cv2.imwrite('edited.png', photo)
 
 
 def loadPhoto(filepath):
@@ -85,3 +87,5 @@ def aggregate(filepath):
 
     blank_image = cv2.cvtColor(blank_image, cv2.COLOR_BGR2GRAY)
     cv2.imwrite('edited.png', blank_image) #saves to working directory
+    
+aggregate("/Users/zhangj/Desktop/stuff.png")
