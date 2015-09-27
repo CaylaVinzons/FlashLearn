@@ -3,7 +3,11 @@ $(document).ready(function() {
   $("#circle1").fadeIn(1000, 'swing');
   second();
   third();
+$('.indexcard').slick({
+      accessibility: true
+    });
 });
+
 
 function second() {
   $("#arrow").css({opacity: 0});
