@@ -53,26 +53,17 @@
 }
 #slide2 {
     /*background-color:#FFFFFF;*/
-    background-image: url("http://www.morphballs.com/wp-content/uploads/2015/04/nature-download-texture-gray-wrinkled-paper-leaf-paper-download-textured-paper-background-1024x768.jpg");
-    background-size: cover;
-    margin-top:-10px;
-    padding-bottom:20em;
     height:auto;
 }
 #slide2 p {
     text-align: center;
-}
-.half {
-    display:inline-block;
-    margin-left:auto;
-    margin-right: auto;
 }
 #submitbutton {
     font-family: 'Open Sans' , sans-serif;
 }
 #slide2 div {
     display:inline-block;
-    margin-top:3em;
+    margin-top:1.3em;
     height:6em;
     width:2em;
     position:absolute;
@@ -80,8 +71,8 @@
 #half {
     background-position:center left;
     left: 10em; right: 50%;
-    height:3em;
 
+    display: inline-block;
 }
 #otherhalf {
     background-position: center right;
@@ -91,6 +82,7 @@
 
 }
 button {
+.button {
     display:inline-block;
     margin:0px auto 0px auto;
     padding: 5px 10px;
@@ -100,9 +92,9 @@ button {
     -webkit-border-radius: 100px;
     border-radius:100px;
     height: 5em;
-    width: 20em;
     display:inline-block;
     cursor: pointer;
+    font-size:12px;;
 }
 #button: hover {    background-color:#CCB50E;
     -webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
