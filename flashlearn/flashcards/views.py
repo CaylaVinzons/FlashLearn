@@ -60,6 +60,14 @@ def edit_card(request, card_id):
             card_document = DocumentCard.objects.get(card=card)
             return redirect("flashcards:view_document", document_id=card_document.document.pk)
 
+def delete_card(request, card_id):
+    if request.method == 'POST':
+        card_document_id = DocumentCard.objects.get(card=card).document.pk
+        card = Card.objects.get(pk=card_id)
+        DocumentCard.objects.filter(card=card).delete()
+        card.delete()
+        return redirect("flashcards:view_document", document_id=card_document_id)
+
 def edit_document(request, document_id):
     if request.method == 'POST':
         form = DocumentEditForm(request.POST)
@@ -89,4 +97,5 @@ def upload_scan(request):
             new_scan = form.save(commit=False)
             new_scan.scan_data = request.FILES['scan_data']
             new_scan.save()
+
         return redirect("flashcards:view_library")
