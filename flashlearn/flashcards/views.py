@@ -43,7 +43,8 @@ def edit_card(request, card_id):
             edited_card = Card.objects.create(front_data=c_front, back_data=back_data)
             card = edited_card
             card.save()
-            return redirect("flashcards:view_document", document_id=document_id)
+            card_document = DocumentCard.objects.get(card=card)
+            return redirect("flashcards:view_document", document_id=card_document.document.pk)
 
 def edit_document(request, document_id):
     if request.method == 'POST':
