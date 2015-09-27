@@ -6,10 +6,9 @@ import os
 from pytesseract import *
 
 
-def readText(filepath):
+def readText(filepath): #returns string
 	i = Image.open(filepath)
 	i.load()
 	i.split()
-	print(image_to_string(i))
+	return image_to_string(i)
 
-readText("/Users/zhangj/Desktop/FlashLearn/flashlearn/flashcards/lib/edited.png")

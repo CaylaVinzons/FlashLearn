@@ -6,4 +6,5 @@ except: from ImageReader import *
 
 def run(filepath):
 	aggregate(filepath)
-	readText(filepath)
+	string = readText(filepath)
+	return string

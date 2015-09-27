@@ -14,7 +14,6 @@ To use: Pass in a file path to aggregate and call the method to generate the ima
 ImageReader.py will run tesseract on the image to extract the text.'''
 
 def getContours(filepath): #filepath should be string
-#filepath is a string
     photo = cv2.imread(filepath, 1) #1 means read in color
 
     height, width = photo.shape[:2] #getting the dimensions of the image
@@ -46,9 +45,6 @@ def getContours(filepath): #filepath should be string
             finalconts.append(contours[i])
 
     return finalconts
-    #photo = cv2.drawContours(photo, finalconts, -1,(255,0,0),3)
-    #cv2.imwrite('edited.png', photo)
-
 
 def loadPhoto(filepath):
     #filepath is a string
@@ -86,6 +82,4 @@ def aggregate(filepath):
                     blank_image.itemset((j, i, 2), photo.item(j, i, 2))
 
     blank_image = cv2.cvtColor(blank_image, cv2.COLOR_BGR2GRAY)
-    cv2.imwrite('edited.png', blank_image) #saves to working directory
-    
-aggregate("/Users/zhangj/Desktop/stuff.png")
+    cv2.imwrite(filepath, blank_image) #saves to same directory
