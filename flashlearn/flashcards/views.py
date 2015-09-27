@@ -41,7 +41,7 @@ def edit_document(request, document_id):
     return HttpResponse("You are editing document %s." % card_id)
 
 def view_library(request, id=None):
-    if request.user and not request.user.is_anonymous:
+    if request.user:
         user_docs = UserDocument.objects.all().filter(user_id=request.user.pk)
         return render(request, "flashcards/library.html", {'userlibrary': user_docs})
     else:
