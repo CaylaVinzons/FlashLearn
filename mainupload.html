@@ -12,16 +12,15 @@
       <nav>
           <a href="home.html"><img src="static/FlashLearnLogo.png"/></a>
           <ul>
-            <li id="first">register</li>
-            <li><a href="login.html">log in</a></li>
+              <li id="first"><a href="login.html">log in</a></li>
             <li><a href="mainupload.html">upload</a></li>
             <li><a href="docviewer.html">documents</a></li>
           </ul>
       </nav>
         <div class="content">
-            Upload your image here
+            Upload your textbook image.
             <form class="uploadimage" method = "post" enctype="multipart/form-data">
-                <input type="file" name="img" accept="image/gif, image/jpeg, image/png">
+                <input type="file" name="img" accept="image/gif, image/jpeg, image/png" id="submitbutton">
                 <input type="submit" name="upload" value="Upload" id="submitbutton">
             </form>
         </div>

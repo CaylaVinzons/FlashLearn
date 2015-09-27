@@ -28,10 +28,10 @@ nav img {
 nav a{
     cursor:default;
     color: #363636;
+    cursor:default;
 }
 nav ul li a:hover{
     color: #FDE74C;
-    cursor: pointer;
 }
 h1{
     text-align:center;
@@ -67,6 +67,7 @@ ul a:visited {
     height:auto;
     width:80%;
     font-size:1.5em;
+    text-align: center;
 }
 /*CardViewer*/
 #textbox {
@@ -101,13 +102,19 @@ ul a:visited {
     margin-top:3em;
 }
 /*DocViewer*/
+#docviewer {
+    height:14em;
+    overflow:scroll;
+    width:auto;
+}
 #libraryhead {
     margin-left: auto;
     margin-right: auto;
-    width:80%;
+    margin-top:0;
+    width:60%;
     height:auto;
-    padding-top:.5em;
-    padding-bottom: .5em;
+    padding-top:.2em;
+    padding-bottom: .2em;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     background-color:#FDE74C;
@@ -119,7 +126,7 @@ ul a:visited {
     text-align:center;
     margin-left:auto;
     margin-right: auto;
-    width: 80%;
+    width: 60%;
     height:auto;
     padding-top:0.5em;
     padding-bottom:0.5em;
@@ -142,3 +149,43 @@ ul a:visited {
 #doc a: hover {
     color:#363636;
 }
+
+.uploadimage {
+    padding-top:.5em;
+    padding-bottom: .5em;
+    color: #363636;
+}
+
+#submitbutton {
+      display:inline-block;
+      margin-top:10em;
+      margin-left: 1.6em;
+      padding: 3px;
+      background-color: #FDE74C;
+      border: 3px solid #363636;
+      -moz-border-radius: 100px;
+      -webkit-border-radius: 100px;
+      border-radius:100px;
+      height: 3em;
+      width: 15em;
+      display:inline-block;
+      cursor: pointer;
+      color: #363636;
+      text-align:center;
+      position: relative;
+      /*font-size:12px;
+      font-weight:bold;
+  }
+#submitbutton: hover, focus {    background-color:#CCB50E;
+      -webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
+      -moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
+      box-shadow: 0 0 1px rgba(0,0,0, .75);
+  }
+  #submitbutton a {
+      text-decoration: none;
+      cursor:pointer;
+      color:#363636;
+  }
+#submitbutton a:visited {
+      color:#363636;
+  }
