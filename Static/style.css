@@ -173,6 +173,18 @@ ul a:visited {
 .indexcard {
     margin-top:3em;
 }
+.bottom {
+    text-align:center;
+    margin-left:auto;
+    margin-right: auto;
+    width: 60%;
+    height:auto;
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+    font-size:0.8em;
+    background-color:#46AEC5;
+    color:white;
+}
 /*DocViewer*/
 #docviewer {
     height:14em;
