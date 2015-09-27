@@ -10,6 +10,7 @@
     <script src="/static/script.js"></script>
 </head>
   <body>
+<<<<<<< Updated upstream
     <nav>
       <a href="{% url 'flashcards:index' %}"><img src="/static/FlashLearnLogo.png"/></a>
         <ul>
@@ -24,6 +25,18 @@
         </ul>
     </nav>
       <div class="content">
+=======
+      <nav>
+          <a href="{% url 'flashcards:index' %}"><img src="/static/FlashLearnLogo.png"/></a>
+          <ul>
+              <li id="first">register</li>
+              <li><a href="login.html">log in</a></li>
+              <li><a href="mainupload.html">upload</a></li>
+              <li><a href="docviewer.html">documents</a></li>
+          </ul>
+      </nav>
+      <div class="content" id="docviewer">
+>>>>>>> Stashed changes
           <div id="libraryhead">Library</div>
           {% for userdoc in userlibrary %}
           <div id="doc">
