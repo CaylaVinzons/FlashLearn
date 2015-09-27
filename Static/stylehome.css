@@ -102,7 +102,7 @@
     display:inline-block;
     cursor: pointer;
     color: #363636;
-    font-size:12px;
+    /*font-size:12px;*/
     font-weight:bold;
 }
 .button: hover, focus {    background-color:#CCB50E;
