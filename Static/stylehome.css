@@ -92,15 +92,17 @@
     margin-left: 1.6em;
     padding: 3px 7px;
     background-color: #FDE74C;
-    border: 1px solid #363636;
+    border: 3px solid #363636;
     -moz-border-radius: 100px;
     -webkit-border-radius: 100px;
     border-radius:100px;
-    height: 5em;
-    width: 18em;
+    height: 6em;
+    width: 16em;
     display:inline-block;
     cursor: pointer;
-    font-size:12px;;
+    font-size: 12px;
+    font-color: #363636;
+    font-weight:bold;
 }
 .button: hover, focus {    background-color:#CCB50E;
     -webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
