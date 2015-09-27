@@ -53,10 +53,15 @@
 }
 #slide2 {
     /*background-color:#FFFFFF;*/
+    background-image:url("noisebg.png");
+    background-repeat: repeat;
+    /*margin-top:-;*/
+    padding-bottom:18em;
     height:auto;
 }
 #slide2 p {
     text-align: center;
+    color:#363636;
 }
 #submitbutton {
     font-family: 'Open Sans' , sans-serif;
@@ -71,32 +76,33 @@
 #half {
     background-position:center left;
     left: 10em; right: 50%;
-
     display: inline-block;
 }
 #otherhalf {
     background-position: center right;
     right:10em; left: 50%;
+    display: inline-block;
 }
 #slide2 img {
 
 }
-button {
 .button {
     display:inline-block;
-    margin:0px auto 0px auto;
-    padding: 5px 10px;
+    margin-top:10em;
+    margin-left: 1.6em;
+    padding: 3px 7px;
     background-color: #FDE74C;
     border: 1px solid #363636;
     -moz-border-radius: 100px;
     -webkit-border-radius: 100px;
     border-radius:100px;
     height: 5em;
+    width: 18em;
     display:inline-block;
     cursor: pointer;
     font-size:12px;;
 }
-#button: hover {    background-color:#CCB50E;
+.button: hover, focus {    background-color:#CCB50E;
     -webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
     -moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
     box-shadow: 0 0 1px rgba(0,0,0, .75);
