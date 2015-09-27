@@ -10,20 +10,24 @@
     <script src="/static/script.js"></script>
 </head>
   <body>
-      <nav>
-          <a href="{% url 'flashcards:index' %}"><img src="/static/FlashLearnLogo.png"/></a>
-          <ul>
-              <li id="first">register</li>
-              <li><a href="login.html">log in</a></li>
-              <li><a href="mainupload.html">upload</a></li>
-              <li><a href="docviewer.html">documents</a></li>
-          </ul>
-      </nav>
+    <nav>
+      <a href="{% url 'flashcards:index' %}"><img src="/static/FlashLearnLogo.png"/></a>
+        <ul>
+            {% if user and not user.is_anonymous %}
+            <li>Hello {{ user.get_full_name|default:user.username}}!</li>
+            <li><a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</a></li>
+            {% endif %}
+            <li><a href="{% url 'flashcards:view_library' %}">documents</a></li>
+            <li><a href="{% url 'flashcards:flashlearn' %}">upload</a></li>
+        </ul>
+    </nav>
       <div class="content">
           <div id="libraryhead">Library</div>
           {% for userdoc in userlibrary %}
           <div id="doc">
-              <a href="cardviewer.html">{{userdoc.document.document_name}}</a>
+              <a href="{% url 'flashcards:view_document' userdoc.document.pk %}">{{userdoc.document.document_name}}</a>
           </div>
           {% endfor %}
         <br>

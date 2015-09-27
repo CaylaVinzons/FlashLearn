@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FlashLearn</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/background.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/static/slick-1.5.7/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/slick-1.5.7/slick/slick-theme.css"/>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/script.js"></script>
+    <script type="text/javascript" src="/static/slick-1.5.7/slick/slick.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/nnattawat/flip/v1.0.16/dist/jquery.flip.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+        $("#card1").flip();
+    });
+    </script>
+</head>
+  <body>
+      <nav>
+          <a href="/"><img src="/static/FlashLearnLogo.png"/></a>
+          <ul>
+
+            <li>Hello admin!</li>
+            <li><a href="/logout/?next=/document/1/">Logout</a></li>
+
+            <li><a href="/library/">documents</a></li>
+            <li><a href="/flashlearn/">upload</a></li>
+          </ul>
+      </nav>
+        <div id = "wrapper">
+      <div class="content" id="cardviewer">
+          <div class="indexcard">
+              <!--for each card-->
+
+              <div id="card1"><div class="front"><p>What is the meaning of life, the universe, and everything???</p></div><div class="back"><p>42 = 6*7</p></div></div>
+
+          </div>
+            </div>
+      </div>
+
+    </body>
+</html>

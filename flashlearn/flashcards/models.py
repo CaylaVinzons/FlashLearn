@@ -26,4 +26,4 @@ class DocumentCard(models.Model):
     document = models.ForeignKey(Document)
     card = models.ForeignKey(Card)
     def __str__(self):
-        return "document: " + str(document) + " card: " + str(card)
+        return "document: " + str(self.document) + " card: " + str(self.card)

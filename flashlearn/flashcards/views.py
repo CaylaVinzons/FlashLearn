@@ -28,7 +28,8 @@ def view_document(request, document_id):
         document = Document.objects.get(pk=document_id)
     except Document.DoesNotExist:
         raise Http404("Document doesn't exist")
-    return render(request, "flashcards/document.html", {'document': document})
+    document_cards = DocumentCard.objects.all().filter(document=document)
+    return render(request, "flashcards/document.html", {'document': document, 'card_deck': document_cards})
 
 def edit_card(request, card_id):
     if request.method == 'POST':

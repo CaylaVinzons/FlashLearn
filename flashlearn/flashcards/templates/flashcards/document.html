@@ -1,1 +1,50 @@
-{{ document }}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FlashLearn</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/background.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/static/slick-1.5.7/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/slick-1.5.7/slick/slick-theme.css"/>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/slick-1.5.7/slick/slick.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $('.indexcard').slick({accessibility: true});
+        {% for c in card_deck %}
+        $("#card{{ c.card.pk }}").click(function(){
+          $("#front{{ c.card.pk }}").toggle();
+          $("#back{{ c.card.pk }}").toggle();
+        });
+        {% endfor %}
+    });
+    </script>
+</head>
+  <body>
+      <nav>
+          <a href="{% url 'flashcards:index' %}"><img src="/static/FlashLearnLogo.png"/></a>
+          <ul>
+            {% if user and not user.is_anonymous %}
+            <li>Hello {{ user.get_full_name|default:user.username}}!</li>
+            <li><a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</a></li>
+            {% endif %}
+            <li><a href="{% url 'flashcards:view_library' %}">documents</a></li>
+            <li><a href="{% url 'flashcards:flashlearn' %}">upload</a></li>
+          </ul>
+      </nav>
+      <div id = "wrapper">
+      <div class="content" id="cardviewer">
+          <div class="indexcard">
+              <!--for each card-->
+              {% for c in card_deck %}
+              <div class="card" id="card{{ c.card.pk }}"><div id="front{{ c.card.pk }}"><p>{{ c.card.front_data }}</p></div><div hidden id="back{{ c.card.pk }}"><p>{{ c.card.back_data }}</p></div></div>
+              {% endfor %}
+          </div>
+        </div>
+      </div>
+    </body>
+</html>
