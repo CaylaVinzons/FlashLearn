@@ -1,3 +1,4 @@
+{% csrf_token %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,9 +20,15 @@
           </ul>
       </nav>
       <div class="content">
+          <div id="libraryhead">Library</div>
+          {% for userdoc in userlibrary %}}
+          <div id="doc">
+              <a href="cardviewer.html">{{userdoc.document.document_name}}</a>
+          </div>
+          {% endfor %}
         <br>
-<button>Make Flashcards</button>
-        <!-- Button to convert to flashcards, which leads to <a href="cardviewer.html">View</a>. -->
+<!-- <button>Make Flashcards</button>
+        Button to convert to flashcards, which leads to <a href="cardviewer.html">View</a>. -->
       </div>
   </body>
 </html>
