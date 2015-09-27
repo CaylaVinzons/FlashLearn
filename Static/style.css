@@ -69,8 +69,17 @@ ul a:visited {
     font-size:1.5em;
 }
 /*CardViewer*/
+#textbox {
+    height:auto;
+    width:90%;
+    border:solid;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top:10em;
+    text-align: center;
+}
 #cardviewer {
-    margin-top:0px
+    margin-top:-2em;
 }
 #wrapper {
     width:100%;
@@ -78,18 +87,18 @@ ul a:visited {
     background-color:#363636;
 }
 .card{
-    height:12em;
+    height:1em;
     width:30%;
     border:solid;
     text-align: center;
-    margin-top:1em;
+    margin-top:.5em;
     background-color:white;
 }
 .card p {
     padding:3em;
 }
 .indexcard {
-    margin-top:8em;
+    margin-top:3em;
 }
 /*DocViewer*/
 #libraryhead {
