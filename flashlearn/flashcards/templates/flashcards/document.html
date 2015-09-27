@@ -19,6 +19,12 @@
           $("#back{{ c.card.pk }}").toggle();
         });
         {% endfor %}
+        $("#documentedit").click(function() {
+          $('#documentpane').toggle();
+        });
+        $("#cardedit").click(function() {
+          $("#cardpane").toggle();
+        });
     });
     </script>
 </head>
@@ -45,12 +51,50 @@
               {% endfor %}
           </div>
         </div>
-        <!-- <div class="editbuttons">
+        <div class="editbuttons" id="documentedit">
              Document
         </div>
-        <div class="editbuttons">
+        <div hidden id="documentpane">
+          <div id="dpane">
+            <form method="post" action="{% url 'flashcards:edit_document' document.pk %}">
+              {% csrf_token %}
+              <input name="document_name" type="text" value="{{ document.document_name }}" />
+              <textarea name="document_data" rows = "5" cols = "120">
+                {{ document.document_data }}
+              </textarea>
+              <input type="submit" value="Submit" />
+            </form>
+          </div>
+          </div>
+        <div class="editbuttons" id="cardedit">
             Cards
-        </div> -->
+        </div>
+        <div hidden id="cardpane">
+          <div id="ncpane">
+            <form method="post" action="{% url 'flashcards:add_card' %}">
+              {% csrf_token %}
+              <input type="hidden" name="card_document" value="{{ document.pk }}" />
+              <input placeholder="Front" name="front_data" type="text" />
+              <input placeholder="Back" name="back_data" type="text" />
+              <input type="submit" value="Submit" />
+            </form>
+          </div>
+          {% for c in card_deck %}
+            <div id="cpane{{ c.card.pk }}">
+              <form method="post" action="{% url 'flashcards:edit_card' c.card.pk %}">
+                {% csrf_token %}
+                <input name="front_data" type="text" value="{{ c.card.front_data }}"/>
+                <input name="back_data" type="text" value="{{ c.card.back_data }}"/>
+                <input type="submit" value="Submit" />
+              </form>
+              <form method="post" action="{% url 'flashcards:delete_card' c.card.pk %}">
+                {% csrf_token %}
+                <input type="hidden" name="document_id" value="{{ document.pk }}" />
+                <input type="submit" value="Delete" />
+              </form>
+            </div>
+          {% endfor %}
+        </div>
       </div>
     </body>
 </html>

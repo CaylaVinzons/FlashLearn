@@ -24,12 +24,13 @@ def login(request):
     return render(request, "flashcards/login.html")
 
 def view_document(request, document_id):
+    form = DocumentEditForm()
     try:
         document = Document.objects.get(pk=document_id)
     except Document.DoesNotExist:
         raise Http404("Document doesn't exist")
     document_cards = DocumentCard.objects.all().filter(document=document)
-    return render(request, "flashcards/document.html", {'document': document, 'card_deck': document_cards})
+    return render(request, "flashcards/document.html", {'document': document, 'card_deck': document_cards, 'form': form})
 
 def add_card(request):
     if request.method == 'POST':
@@ -38,9 +39,9 @@ def add_card(request):
             c_document = request.POST['card_document']
             c_front = request.POST['front_data']
             c_back = request.POST['back_data']
-            card = Card.objects.add(front_data=c_front, back_data=c_back)
+            card = Card(front_data=c_front, back_data=c_back)
             card.save()
-            card_document = DocumentCard.objects.add(card=card, document=Document.objects.get(pk=c_document))
+            card_document = DocumentCard(card=card, document=Document.objects.get(pk=c_document))
             card_document.save()
             return redirect("flashcards:view_document", document_id=card_document.document.pk)
 
@@ -54,34 +55,34 @@ def edit_card(request, card_id):
                 raise Http404("Card doesn't exist")
             c_front = request.POST['front_data']
             c_back = request.POST['back_data']
-            edited_card = Card.objects.create(front_data=c_front, back_data=back_data)
-            card = edited_card
+            card.front_data = c_front
+            card.back_data = c_back
             card.save()
             card_document = DocumentCard.objects.get(card=card)
             return redirect("flashcards:view_document", document_id=card_document.document.pk)
 
 def delete_card(request, card_id):
+    card = Card.objects.get(pk=card_id)
+    DocumentCard.objects.filter(card=card).delete()
+    card.delete()
     if request.method == 'POST':
-        card_document_id = DocumentCard.objects.get(card=card).document.pk
-        card = Card.objects.get(pk=card_id)
-        DocumentCard.objects.filter(card=card).delete()
-        card.delete()
+        card_document_id = request.POST['document_id']
         return redirect("flashcards:view_document", document_id=card_document_id)
+    else:
+        return redirect("flashcards:view_library")
 
 def edit_document(request, document_id):
     if request.method == 'POST':
-        form = DocumentEditForm(request.POST)
-        if form.is_valid():
-            try:
-                document = Document.objects.get(pk=document_id)
-            except Document.DoesNotExist:
-                raise Http404("Document doesn't exist")
-            d_name = request.POST['document_name']
-            d_data = request.POST['document_data']
-            edited_document = Document.objects.create(document_name=d_name, document_data=d_data)
-            document = edited_document
-            document.save()
-            return redirect("flashcards:view_document", document_id=document_id)
+        try:
+            document = Document.objects.get(pk=document_id)
+        except Document.DoesNotExist:
+            raise Http404("Document doesn't exist")
+        d_name = request.POST['document_name']
+        d_data = request.POST['document_data']
+        document.document_name = d_name
+        document.document_data = d_data
+        document.save()
+        return redirect("flashcards:view_document", document_id=document_id)
 
 def view_library(request):
     if loggedin(request):
