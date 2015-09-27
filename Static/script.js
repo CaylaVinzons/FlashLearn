@@ -3,12 +3,14 @@ $(document).ready(function() {
   $("#circle1").fadeIn(1000, 'swing');
   second();
   third();
-$('.indexcard').slick({
+  $('.indexcard').slick({
       accessibility: true
     });
 });
 
-
+$(".card").click(function() {
+    $("#card").flip();
+});
 function second() {
   $("#arrow").css({opacity: 0});
   $("#arrow").delay(1000);
