@@ -2,28 +2,29 @@
 <html>
     <head>
         <title>FlashLearn</title>
-        <link rel="stylesheet" type="text/css" href="style.css"/>
-        <link rel="stylesheet" type="text/css" href="stylehome.css"/>
+        <link rel="stylesheet" type="text/css" href="static/style.css"/>
+        <link rel="stylesheet" type="text/css" href="static/stylehome.css"/>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="script.js"></script>
+        <script src="static/script.js"></script>
     </head>
     <body>
         <nav>
-          <a href="home.html"><img src="Static/FlashLearnLogo.png"/></a>
+          <a href="home.html"><img src="static/FlashLearnLogo.png"/></a>
             <ul>
                 <li id="first">register</li>
                 <li><a href="login.html">log in</a></li>
                 <li><a href="mainupload.html">upload</a></li>
+                <li><a href="docviewer.html">documents</a></li>
             </ul>
         </nav>
         <div class = "content">
             <div id="slide1" class="slide">
                 <p id="text">Turn your textbooks into flashcards</p>
                 <div class="clearfix">
-                    <img id="circle1" src="Static/CircleTextbook.png" height="25%" width="25%"/>
-                    <img id="arrow" src="Static/arrow.png" height="15%" width="15%"/>
-                    <img id="circle2" src="Static/CircleNote.png" height="25%" width="25%"/>
+                    <img id="circle1" src="static/CircleTextbook.png" height="25%" width="25%"/>
+                    <img id="arrow" src="static/arrow.png" height="15%" width="15%"/>
+                    <img id="circle2" src="static/CircleNote.png" height="25%" width="25%"/>
                 </div>
             </div>
             <div id="slide2" class ="slide">
@@ -33,12 +34,12 @@
                     <a href="mainupload.html"><button id="button">Upload</button></a>
                 </div>
                 <div id="otherhalf">
-                <img src="Static/textbook.png" height="300px" width="240px"/>
+                <img src="static/textbook.png" height="300px" width="240px"/>
                 </div>
             </clearfix>
             </div>
             <div id="slide3" class="slide">
-                <p>Pytesseract and Opencv will extract your <b>bold</b> words and save their definitions</p>
+                <p>Pytesseract and Opencv <br>will extract your <b>bold</b> words and save their definitions</p>
         </div>
     </body>
 </html>
