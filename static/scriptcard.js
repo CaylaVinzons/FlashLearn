@@ -2,7 +2,8 @@ $(document).ready(function() {
   $('.indexcard').slick({
       accessibility: true
     });
-});
-$(".card").click(function() {
-    $("#card").flip();
+    $("#card1").flip();
+    $("#card2").flip();
+    $("#card3").flip();
+    $("#card4").flip();
 });
