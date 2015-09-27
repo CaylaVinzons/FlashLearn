@@ -28,10 +28,10 @@ nav img {
 nav a{
     cursor:default;
     color: #363636;
+    cursor:default;
 }
 nav ul li a:hover{
     color: #FDE74C;
-    cursor: pointer;
 }
 h1{
     text-align:center;
@@ -102,13 +102,19 @@ ul a:visited {
     margin-top:3em;
 }
 /*DocViewer*/
+#docviewer {
+    height:14em;
+    overflow:scroll;
+    width:auto;
+}
 #libraryhead {
     margin-left: auto;
     margin-right: auto;
-    width:80%;
+    margin-top:0;
+    width:60%;
     height:auto;
-    padding-top:.5em;
-    padding-bottom: .5em;
+    padding-top:.2em;
+    padding-bottom: .2em;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     background-color:#FDE74C;
@@ -120,7 +126,7 @@ ul a:visited {
     text-align:center;
     margin-left:auto;
     margin-right: auto;
-    width: 80%;
+    width: 60%;
     height:auto;
     padding-top:0.5em;
     padding-bottom:0.5em;
