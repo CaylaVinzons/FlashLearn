@@ -4,7 +4,9 @@ try:
 	from imageReader import *
 except: from ImageReader import *
 
-def run(filepath):
-	aggregate(filepath)
-	string = readText(filepath)
-	return string
+import sys
+
+
+aggregate(sys.argv[1])
+string = readText(sys.argv[1])
+print(string)
