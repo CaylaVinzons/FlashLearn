@@ -6,6 +6,9 @@ from .models import *
 from .forms import *
 
 from django.http import HttpResponse
+from django.conf import settings
+
+import urllib
 
 def loggedin(request):
     return request.user and (not request.user.is_anonymous or request.user.pk is not None)
@@ -98,5 +101,5 @@ def upload_scan(request):
             new_scan = form.save(commit=False)
             new_scan.scan_data = request.FILES['scan_data']
             new_scan.save()
-
+            link = settings.image_server + "/witchcraft/dostuff.php"
         return redirect("flashcards:view_library")
