@@ -1,1 +1,1 @@
-web: gunicorn flashlearn/flashlearn.wsgi --log-file -
+web: gunicorn flashlearn.wsgi --log-file -
