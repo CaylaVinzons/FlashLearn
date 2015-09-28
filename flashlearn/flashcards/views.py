@@ -8,7 +8,7 @@ from .forms import *
 from django.http import HttpResponse
 from django.conf import settings
 
-import urllib
+from urllib.request import urlopen
 
 def loggedin(request):
     return request.user and (not request.user.is_anonymous or request.user.pk is not None)
@@ -96,10 +96,23 @@ def view_library(request):
 
 def upload_scan(request):
     if request.method == 'POST':
-        form = ScanUploadForm(request.POST, request.FILES)
-        if form.is_valid():
-            new_scan = form.save(commit=False)
-            new_scan.scan_data = request.FILES['scan_data']
-            new_scan.save()
-            link = settings.image_server + "/witchcraft/dostuff.php"
+        new_scan = Scan(scan_data = request.FILES['scan_data'])
+        new_scan.save()
+        link = "http://104.131.48.234/witchcraft/dostuff.php"
+        f = urlopen(link)
+        file1 = f.read()
+        front = str(file1)
+        link2 = "http://104.131.48.234/witchcraft/dostuff2.php"
+        f2 = urlopen(link2)
+        file2 = f2.read();
+        back = str(file2)
+        documenttext = front + back
+        d = Document(document_name=front, document_data = documenttext)
+        d.save()
+        c = Card(front_data=front,back_data=back);
+        c.save()
+        dc = DocumentCard(document=d,card=c)
+        dc.save()
+        ud = UserDocument(user_id=request.user.pk,document=d)
+        ud.save()
         return redirect("flashcards:view_library")

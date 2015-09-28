@@ -14,7 +14,7 @@ class Document(models.Model):
         return self.document_name
 
 class Scan(models.Model):
-    scan_data = models.ImageField(upload_to="flashcards/static/scans/")
+    scan_data = models.ImageField(upload_to="scans/")
 
 class UserDocument(models.Model):
     user_id = models.CharField(max_length = 10)
