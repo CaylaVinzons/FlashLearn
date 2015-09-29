@@ -65,6 +65,8 @@ flashlearn/flashlearn/.DS_Store
 
 flashlearn/flashlearn/settings.py
 
+flashlearn/settings.py
+
 *.pyc
 
 venv
