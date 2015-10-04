@@ -1,1 +1,1 @@
-web: gunicorn flashlearn.wsgi --log-file -
+web: python manage.py collectstatic --noinput; gunicorn flashlearn.wsgi --log-file -
