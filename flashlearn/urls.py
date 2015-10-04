@@ -29,3 +29,7 @@ urlpatterns = [
     url('', include('django.contrib.auth.urls', namespace="auth")),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+urlpatterns += patterns('',
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+)
