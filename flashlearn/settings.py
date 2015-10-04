@@ -122,6 +122,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT='static/'
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
 LOGIN_REDIRECT_URL = '/'
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY=""
