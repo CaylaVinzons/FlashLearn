@@ -71,3 +71,4 @@ flashlearn/settings.py
 
 venv
 staticfiles
+static
